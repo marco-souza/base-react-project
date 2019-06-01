@@ -1,0 +1,31 @@
+{
+  "name": "base-react-project",
+  "version": "1.0.0",
+  "description": "base react project",
+  "main": "index.js",
+  "repository": "git@gitlab.com:marco-souza/base-react-project.git",
+  "author": "Marco Antônio <ma.souza.junior@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "NODE_ENV=development pnpx nodemon --ignore ./public --exec rollup -c rollup.config.js --silent"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "rollup": "^1.13.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-generate-html-template": "^1.2.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "rollup-plugin-replace": "^2.2.0"
+  }
+}
