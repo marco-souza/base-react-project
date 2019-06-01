@@ -9,15 +9,16 @@ import server from 'rollup-plugin-server'
 import livereload from 'rollup-plugin-livereload'
 import { config } from 'dotenv'
 
+// Load .env
 config({
   path: './.dev.env',
 })
 
 const {
   NODE_ENV,
-  SRC_PATH = './src/app/index.js',
-  HTML_ROOT = './src/app/index.html',
-  BUILD_DIR = './public/',
+  SRC_PATH,
+  HTML_ROOT,
+  BUILD_DIR,
 } = process.env
 
 const dev = NODE_ENV !== 'production'
