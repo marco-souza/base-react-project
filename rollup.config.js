@@ -1,23 +1,30 @@
 import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import json from 'rollup-plugin-json'
-import run from 'rollup-plugin-run'
 import minify from 'rollup-plugin-babel-minify'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
+import server from 'rollup-plugin-server'
+import livereload from 'rollup-plugin-livereload'
 import { config } from 'dotenv'
 
 config({
   path: './.dev.env',
 })
 
-const dev = process.env.NODE_ENV !== 'production'
-const input = process.env.SRC_PATH || './src/app/index.js'
-const htmlRoot = process.env.HTML_ROOT || './src/app/index.html'
+const {
+  NODE_ENV,
+  SRC_PATH = './src/app/index.js',
+  HTML_ROOT = './src/app/index.html',
+  BUILD_DIR = './public/',
+} = process.env
+
+const dev = NODE_ENV !== 'production'
+
 
 export default {
-  input,
+  input: SRC_PATH,
   output: {
     file: 'public/main.js',
     format: 'iife'
@@ -30,12 +37,14 @@ export default {
     commonjs(),
     json(),
     htmlTemplate({
-      template: htmlRoot,
+      template: HTML_ROOT,
       target: 'index.html',
     }),
     !dev && minify(),
     replace({
       'process.env.NODE_ENV': JSON.stringify( 'production' )
-    })
+    }),
+    server(BUILD_DIR),
+    livereload(),
   ]
 }
