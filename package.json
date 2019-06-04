@@ -10,8 +10,8 @@
     "start": "yarn start:dev",
     "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w",
     "build": "NODE_ENV=production rollup -c rollup.config.js",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "yarn test --watch",
+    "test": "jest"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
