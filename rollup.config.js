@@ -10,9 +10,10 @@ import livereload from 'rollup-plugin-livereload'
 import { config } from 'dotenv'
 
 // Load .env
-config({
-  path: './.dev.env',
-})
+const shouldLoadProd = process.env.NODE_ENV === 'production'
+
+config({ path: './config/.dev.env' })
+shouldLoadProd && config({ path: './config/.prod.env' })
 
 const {
   NODE_ENV,
@@ -22,7 +23,6 @@ const {
 } = process.env
 
 const dev = NODE_ENV !== 'production'
-
 
 export default {
   input: SRC_PATH,
@@ -41,11 +41,11 @@ export default {
       template: HTML_ROOT,
       target: 'index.html',
     }),
-    !dev && minify(),
     replace({
       'process.env.NODE_ENV': JSON.stringify( 'production' )
     }),
-    server(BUILD_DIR),
-    livereload(),
+    !dev && minify(),
+    dev && server(BUILD_DIR),
+    dev && livereload(),
   ]
 }
