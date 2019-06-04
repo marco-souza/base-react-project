@@ -7,7 +7,11 @@
   "author": "Marco Antônio <ma.souza.junior@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w"
+    "start": "yarn start:dev",
+    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w",
+    "build": "NODE_ENV=production rollup -c rollup.config.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
@@ -19,6 +23,10 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
     "rollup": "^1.13.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-babel-minify": "^8.0.0",
