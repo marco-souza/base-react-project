@@ -16,3 +16,6 @@
   - [x] Add jest
   - [x] Add enzyme
   - [x] create some simple test
+- [ ] Linter
+  - [ ] Add eslint with standard
+  - [ ] Add editorConfig
