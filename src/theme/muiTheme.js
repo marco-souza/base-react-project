@@ -1,12 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
-  ...
   overrides: {
-    // Overriding example:
-    // MuiDrawer: {
-    //   background: '#18202c',
-    // },
+    MuiDrawer: {
+       background: '#18202c',
+    },
   },
 });
 
