@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Greetings(props) {
+function Greetings (props) {
   return (
     <p>Hallo</p>
   )
