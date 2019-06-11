@@ -61,7 +61,7 @@ export default {
       target: 'index.html',
     }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify( 'production' )
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
     !dev && minify(),
     dev && server(BUILD_DIR),
