@@ -15,7 +15,9 @@
     "test": "jest",
     "lint": "eslint src",
     "fix": "eslint --fix src",
-    "stories": "start-storybook"
+    "stories": "start-storybook",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "dependencies": {
     "@material-ui/core": "^4.1.0",
@@ -37,6 +39,8 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
+    "docz": "^1.2.0",
+    "docz-theme-default": "^1.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
