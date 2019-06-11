@@ -7,6 +7,7 @@
   "author": "Marco Antônio <ma.souza.junior@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prestart": "yarn",
     "start": "yarn start:dev",
     "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w",
     "build": "NODE_ENV=production rollup -c rollup.config.js",
@@ -29,6 +30,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
