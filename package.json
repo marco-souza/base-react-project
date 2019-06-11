@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "yarn",
     "start": "yarn start:dev",
-    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w",
+    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w && workbox generateSW workbox-config.js",
     "build": "NODE_ENV=production rollup -c rollup.config.js",
     "test:watch": "yarn test --watch",
     "test": "jest",
@@ -25,7 +25,8 @@
     "@material-ui/utils": "^4.1.0",
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rollup-plugin-terser": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -63,6 +64,7 @@
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-serve": "^1.0.1",
     "standard": "^12.0.1",
-    "storybook-addon-jsx": "^7.1.2"
+    "storybook-addon-jsx": "^7.1.2",
+    "workbox": "^0.0.0"
   }
 }

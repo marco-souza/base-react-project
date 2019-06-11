@@ -7,6 +7,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import server from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import { terser } from 'rollup-plugin-terser'
 import { config } from 'dotenv'
 
 // Load .env
@@ -36,6 +37,7 @@ export default {
     }),
     json(),
     babel(),
+    terser(),
     commonjs({
       include: /node_modules/,
       namedExports: {
