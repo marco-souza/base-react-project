@@ -2,11 +2,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Greetings from './components/Greetings'
-
+import TopBar from './components/TopBar'
 
 // bootstrap component
 const app = (
-  <Greetings />
+  <React.Fragment>
+    <TopBar />
+    <Greetings />
+  </React.Fragment>
 )
 
 // Bind component to DOM
