@@ -5,7 +5,7 @@ import minify from 'rollup-plugin-babel-minify'
 import htmlTemplate from 'rollup-plugin-generate-html-template'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
-import server from 'rollup-plugin-server'
+import server from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import { config } from 'dotenv'
 
@@ -27,16 +27,35 @@ const dev = NODE_ENV !== 'production'
 export default {
   input: SRC_PATH,
   output: {
-    file: 'public/main.js',
-    format: 'iife'
+    dir: 'public',
+    format: 'esm'
   },
   plugins: [
     nodeResolve({
       browser: true,
     }),
-    babel(),
-    commonjs(),
     json(),
+    babel(),
+    commonjs({
+      include: /node_modules/,
+      namedExports: {
+        'react-is': [ 'ForwardRef' ],
+        'react-dom': [ 'findDOMNode' ],
+        'prop-types': [
+          'func',
+          'bool',
+          'element',
+          'elementType',
+          'oneOfType'
+        ],
+        'react': [
+          'isValidElement',
+          'isValidElementType',
+          'cloneElement',
+          'Children'
+        ],
+      },
+    }),
     htmlTemplate({
       template: HTML_ROOT,
       target: 'index.html',

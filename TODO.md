@@ -5,9 +5,9 @@
   - [ ] build
 - [ ] setup prod build
 - [ ] research and add styled components (css)
-- [ ] setup material-ui with theme
-  - [ ] fonts
-  - [ ] icons
+- [X] setup material-ui with theme
+  - [X] fonts(?)
+  - [X] icons
 - [ ] Make a PWA
   - [ ] manifest.json
   - [ ] service worker
