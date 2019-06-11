@@ -8,6 +8,6 @@ To see the documentation using Docz, clone the repository, access its folder and
 yarn && yarn docz:dev
 ```
 
-**or* check the `/docs` folder above to see the Markdown files.
+**or** check the `/docs` folder above to see the Markdown files.
 
 Have a nice coding! 😎
