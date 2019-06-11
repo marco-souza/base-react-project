@@ -1,0 +1,25 @@
+---
+name: 0. Hello world
+route: /
+---
+
+# Hello seus drogado!
+
+Gal, vamos documentar aqui o uso básico do repositório. Iremos cobrir os **scripts**, **organização** das pastas e **TODO** list de melhorias a serem implementadas.
+
+## Vamos usar Docz
+
+[Docz](https://www.docz.site) é uma ferramenta bem interessante para documentar os projetos. É uma alternativa ao Gitbook com uma vantagem, ele aceita arquivos `.mdx`, ou seja, **Marckdown + React ❤️**.
+
+Para iniciar documentação local, **clone o repositório** e digite:
+
+```bash
+cd base-react-project
+yarn
+yarn docz:dev
+```
+
+### Ambiente de produção
+
+Também é possível gerar uma versão de produção da documentação para disponibilizá-la online, bbasta rodar `yarn docz:build` e será gerado uma pasta com a aplicação em `./docz/dist`.
+

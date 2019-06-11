@@ -1,0 +1,38 @@
+---
+name: 1. NPM Scripts
+route: /scripts
+---
+
+# NPM scripts!
+
+Para facilitar a interação com o projeto foram criados alguns **npm scripts**. Estes scripts ficam no `package.json` em
+```cjson
+// filename: package.json
+
+{
+  // ...
+  "scripts": {
+    // NPM scripts
+  }
+}
+```
+
+Temos os seguintes scripts:
+
+## Aplicação
+- `yarn start`: Alias para `yarn start:dev`.
+- `yarn start:dev`: Inicia a aplicação em ambiente de desenvolvimento.
+- `yarn build`: Faz o build da aplicação em `/public`.
+
+## Testes & Lint
+- `yarn test`: Roda todos os testes da base.
+- `yarn test:watch`: Roda todos os testes e fica aguardando para rodar apenas os alterados.
+- `yarn lint`: Roda `eslint` para buscar erros de estilos.
+- `yarn fix`: Corrige erros encontrados pelo `eslint`.
+
+## Documentação
+- `yarn docz:dev`: Roda a documentação.
+- `yarn docz:build`: Da build na documentação para deploy.
+- `yarn stories`: Roda o `Storybook` para mostrar os componentes da base.
+
+
