@@ -7,6 +7,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import server from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import workbox from 'rollup-plugin-workbox'
 import { terser } from 'rollup-plugin-terser'
 import { config } from 'dotenv'
 
@@ -37,7 +38,6 @@ export default {
     }),
     json(),
     babel(),
-    terser(),
     commonjs({
       include: /node_modules/,
       namedExports: {
@@ -65,6 +65,19 @@ export default {
     replace({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+    workbox({
+      /** @type {'generateSW'|'injectManifest'} default 'generateSW' */
+      mode: 'injectManifest',
+      /** @type {Function} default fancy render */
+      render: ({ swDest, count, size }) => console.log(
+        '📦', swDest,
+        '#️⃣', count,
+        '🐘', size,
+      ),
+      /** @type {Object} no default */
+      workboxConfig: require('./workbox-config'),
+    }),
+    terser(),
     !dev && minify(),
     dev && server(BUILD_DIR),
     dev && livereload(),

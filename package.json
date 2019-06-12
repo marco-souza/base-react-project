@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "yarn",
     "start": "yarn start:dev",
-    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w && workbox generateSW workbox-config.js",
+    "start:dev": "NODE_ENV=development rollup -c rollup.config.js -w",
     "build": "NODE_ENV=production rollup -c rollup.config.js",
     "test:watch": "yarn test --watch",
     "test": "jest",
@@ -63,6 +63,7 @@
     "rollup-plugin-node-resolve": "^5.0.1",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-workbox": "^2.0.0",
     "standard": "^12.0.1",
     "storybook-addon-jsx": "^7.1.2",
     "workbox": "^0.0.0"
