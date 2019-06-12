@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js')
 
 workbox.precaching.precacheAndRoute([])
@@ -12,5 +13,12 @@ workbox.routing.registerRoute(
         maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
       }),
     ],
+  }),
+)
+
+workbox.routing.registerRoute(
+  /\.(?:js|css|json)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'resources',
   }),
 )
