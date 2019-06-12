@@ -66,15 +66,7 @@ export default {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     workbox({
-      /** @type {'generateSW'|'injectManifest'} default 'generateSW' */
-      mode: 'injectManifest',
-      /** @type {Function} default fancy render */
-      render: ({ swDest, count, size }) => console.log(
-        '📦', swDest,
-        '#️⃣', count,
-        '🐘', size,
-      ),
-      /** @type {Object} no default */
+      mode: 'injectManifest', // {'generateSW'|'injectManifest'} default 'generateSW'
       workboxConfig: require('./workbox-config'),
     }),
     terser(),
