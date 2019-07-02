@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import MailIcon from '@material-ui/icons/Mail'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import MoreIcon from '@material-ui/icons/MoreVert'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -113,8 +114,16 @@ export default function TopBar () {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Link to='/'>
+          Home
+        </Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Link to='/about'>
+          About
+        </Link>
+      </MenuItem>
     </Menu>
   )
 
@@ -172,7 +181,7 @@ export default function TopBar () {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant='h6' noWrap>
-            Material-UI
+            My awesome PWA!
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
