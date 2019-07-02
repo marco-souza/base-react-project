@@ -6,7 +6,11 @@ import TopBar from 'app/components/TopBar'
 import theme from 'app/themes/muiTheme'
 import { ThemeProvider } from '@material-ui/styles'
 
+import registerServiceWorker from './helpers/registerServiceWorker'
+
 // bootstrap component
+registerServiceWorker()
+
 const app = (
   <ThemeProvider theme={theme}>
     <TopBar />
