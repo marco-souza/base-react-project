@@ -8,9 +8,6 @@ import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 import WebpackPwaManifest from 'webpack-pwa-manifest'
 import { GenerateSW } from 'workbox-webpack-plugin'
 
-// import CopyPlugin from 'copy-webpack-plugin'
-// import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin'
-
 import manifest from '../src/assets/manifest'
 import { getVarEnv } from './utils'
 
@@ -79,11 +76,6 @@ export default {
       swDest: 'sw.js',
       skipWaiting: true,
     }),
-    // Service Workers
-    // new ServiceWorkerWebpackPlugin({
-    //   entry: app.workers.main,
-    //   filename: 'sw-main.js',
-    // }),
   ],
 
   // Optimizations
