@@ -19,3 +19,10 @@
 - [x] Linter
   - [x] Add eslint with standard
   - [x] Add editorConfig
+
+---
+
+- [x] Use webpack
+- [x] Add favicon
+- [ ] Add manifest
+- [ ] Add SW
