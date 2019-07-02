@@ -8,10 +8,10 @@
 - [X] setup material-ui with theme
   - [X] fonts(?)
   - [X] icons
-- [ ] Make a PWA
-  - [ ] manifest.json
-  - [ ] service worker
-    - [ ] workbox
+- [x] Make a PWA
+  - [x] manifest.json
+  - [x] service worker
+    - [x] workbox
 - [x] Tests
   - [x] Add jest
   - [x] Add enzyme
@@ -25,4 +25,4 @@
 - [x] Use webpack
 - [x] Add favicon
 - [x] Add manifest
-- [ ] Add SW
+- [x] Add SW

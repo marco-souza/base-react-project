@@ -6,6 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 import WebpackPwaManifest from 'webpack-pwa-manifest'
+import { GenerateSW } from 'workbox-webpack-plugin'
 
 // import CopyPlugin from 'copy-webpack-plugin'
 // import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin'
@@ -17,6 +18,7 @@ const entry = getVarEnv('SRC_PATH')
 const dest = getVarEnv('BUILD_DIR')
 const appHtml = getVarEnv('APP_HTML')
 const appLogo = getVarEnv('APP_LOGO')
+const appTitle = getVarEnv('APP_TITLE')
 const appResolve = getVarEnv('APP_RESOLVE')
 const assetsResolve = getVarEnv('ASSETS_RESOLVE')
 const modulesResolve = getVarEnv('MODULES_RESOLVE')
@@ -62,6 +64,9 @@ export default {
       ],
     }),
     new HtmlWebpackPlugin({
+      templateParameters: {
+        title: appTitle
+      },
       template: appHtml,
     }),
     // Avoid to import React to use JSX syntax
@@ -70,6 +75,10 @@ export default {
     }),
     new FaviconsWebpackPlugin(appLogo),
     new WebpackPwaManifest(manifest),
+    new GenerateSW({
+      swDest: 'sw.js',
+      skipWaiting: true,
+    }),
     // Service Workers
     // new ServiceWorkerWebpackPlugin({
     //   entry: app.workers.main,

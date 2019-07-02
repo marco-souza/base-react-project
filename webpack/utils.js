@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import { config } from 'dotenv'
 
 // Load .env
@@ -9,7 +10,11 @@ prod && config({ path: './config/.prod.env' }) // overwrite dev configs
 
 export function getVarEnv (variable) {
   const value = process.env[variable]
-  if (!value) return ''
+  const result = path.resolve(value)
 
-  return path.resolve(value)
+  if (!value) return ''
+  // check if result exists before return it
+  if (!fs.existsSync(result)) return value
+
+  return result
 }
