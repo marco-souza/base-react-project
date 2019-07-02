@@ -66,10 +66,6 @@ export default {
       },
       template: appHtml,
     }),
-    // Avoid to import React to use JSX syntax
-    new webpack.ProvidePlugin({
-      'React': 'react',
-    }),
     new FaviconsWebpackPlugin(appLogo),
     new WebpackPwaManifest(manifest),
     new GenerateSW({
