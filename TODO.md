@@ -24,5 +24,5 @@
 
 - [x] Use webpack
 - [x] Add favicon
-- [ ] Add manifest
+- [x] Add manifest
 - [ ] Add SW

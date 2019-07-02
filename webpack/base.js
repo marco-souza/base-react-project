@@ -5,21 +5,21 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
+import WebpackPwaManifest from 'webpack-pwa-manifest'
+
 // import CopyPlugin from 'copy-webpack-plugin'
 // import ServiceWorkerWebpackPlugin from 'serviceworker-webpack-plugin'
-// import WebpackPwaManifest from 'webpack-pwa-manifest'
 
+import manifest from '../src/assets/manifest'
 import { getVarEnv } from './utils'
 
 const entry = getVarEnv('SRC_PATH')
 const dest = getVarEnv('BUILD_DIR')
-const htmlTemplate = getVarEnv('HTML_ROOT')
+const appHtml = getVarEnv('APP_HTML')
 const appLogo = getVarEnv('APP_LOGO')
 const appResolve = getVarEnv('APP_RESOLVE')
 const assetsResolve = getVarEnv('ASSETS_RESOLVE')
 const modulesResolve = getVarEnv('MODULES_RESOLVE')
-
-console.log(appResolve)
 
 export default {
   entry,
@@ -62,17 +62,14 @@ export default {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: htmlTemplate,
+      template: appHtml,
     }),
     // Avoid to import React to use JSX syntax
     new webpack.ProvidePlugin({
       'React': 'react',
     }),
-    // Create favicon
     new FaviconsWebpackPlugin(appLogo),
-    // new WebpackPwaManifest(manifest),
-    // Copy Assets
-    // new CopyPlugin(app.copyAssets),
+    new WebpackPwaManifest(manifest),
     // Service Workers
     // new ServiceWorkerWebpackPlugin({
     //   entry: app.workers.main,
