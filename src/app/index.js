@@ -1,8 +1,7 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Greetings from 'app/components/Greetings'
-import TopBar from 'app/components/TopBar'
+import Router from 'app/router'
 import theme from 'app/themes/muiTheme'
 import { ThemeProvider } from '@material-ui/styles'
 
@@ -13,8 +12,7 @@ registerServiceWorker()
 
 const app = (
   <ThemeProvider theme={theme}>
-    <TopBar />
-    <Greetings />
+    <Router />
   </ThemeProvider>
 )
 
