@@ -26,3 +26,5 @@
 - [x] Add favicon
 - [x] Add manifest
 - [x] Add SW
+- [x] FEA: add react-routes
+- [ ] REF: change project structure\
