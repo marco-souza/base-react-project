@@ -7,6 +7,6 @@ describe('components/TopBar', () => {
   it('should render Hallo', () => {
     const wrapper = shallow(<TopBar />)
 
-    expect(wrapper.text()).toContain('My account')
+    expect(wrapper.text()).toContain('My awesome PWA')
   })
 })
