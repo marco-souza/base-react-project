@@ -20,6 +20,7 @@ const config = merge(baseConfig, {
     contentBase: dest,
     watchContentBase: true,
     compress: true,
+    host: '0.0.0.0',
     port: 9000,
     hot: true,
     open: true,

@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # this env forces sw update to new version without confirm
+      - FORCE_UPDATE=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 9000:9000
+
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./.storybook:/app/.storybook
+      - /app/node_modules
+    ports:
+      - 5000:5000
+    command: yarn stories
+
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DOCZ_HOST=0.0.0.0
+    volumes:
+      - ./docs:/app/docs
+      - ./doczrc.js:/app/doczrc.js
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    command: yarn docs
