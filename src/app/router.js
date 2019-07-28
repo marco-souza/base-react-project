@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import TopBar from 'app/components/TopBar'
-import Home from 'app/scenes/Home'
-import About from 'app/scenes/About'
+import Home from 'app/pages/Home'
+import About from 'app/pages/About'
 
 const AppRouter = () => (
   <Router>
