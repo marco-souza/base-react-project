@@ -1,5 +1,5 @@
 import webpack from 'webpack'
-
+import uuid from 'uuid/v1'
 import Happypack from 'happypack'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
@@ -71,7 +71,14 @@ export default {
     new GenerateSW({
       swDest: 'sw.js',
       skipWaiting: true,
+      cleanupOutdatedCaches: true,
+      clientsClaim: true,
+      cacheId: uuid(),
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.FORCE_UPDATE': JSON.stringify(process.env.FORCE_UPDATE)
+    })
   ],
 
   // Optimizations
