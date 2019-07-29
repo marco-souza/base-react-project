@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from 'app/components/Button'
+import Button from 'app/components/core/Button'
 
 function About (props) {
   return (

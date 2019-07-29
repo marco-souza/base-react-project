@@ -77,7 +77,7 @@ export default {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.FORCE_UPDATE': JSON.stringify(process.env.FORCE_UPDATE)
+      'process.env.FORCE_UPDATE': JSON.stringify(process.env.FORCE_UPDATE || '')
     })
   ],
 

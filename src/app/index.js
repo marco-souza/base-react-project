@@ -5,7 +5,7 @@ import Router from 'app/router'
 import theme from 'app/themes/muiTheme'
 import { ThemeProvider } from '@material-ui/styles'
 
-import registerServiceWorker from './helpers/registerServiceWorker'
+import registerServiceWorker from 'app/helpers/registerServiceWorker'
 
 // bootstrap component
 registerServiceWorker()

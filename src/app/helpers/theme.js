@@ -1,6 +1,6 @@
 const theme = {
   bg: {
-    primary: 'palevioletred',
+    primary: '#474F57',
     secondary: 'white',
   },
   text: {

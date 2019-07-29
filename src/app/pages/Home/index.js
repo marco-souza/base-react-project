@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Greetings from 'app/components/Greetings'
+import CallToActionContainer from 'app/components/CallToActionContainer'
 
 function Home (props) {
   return (
     <div>
-      <Greetings />
+      <CallToActionContainer />
     </div>
   )
 }
