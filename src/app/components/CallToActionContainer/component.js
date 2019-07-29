@@ -1,12 +1,11 @@
 import React from 'react'
 
+import Block from 'app/components/core/Block'
 import Button from 'app/components/core/Button'
 import Container from 'app/components/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import styled from 'styled-components'
-
-import Block from './Block'
 
 const Header = styled.h2`
   padding-top: 200px;
