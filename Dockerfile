@@ -3,7 +3,7 @@ FROM node:11-alpine
 # app
 ENV NODE_ENV=development
 ENV SRC_PATH=src/app/index.js
-ENV BUILD_DIR=public/
+ENV BUILD_DIR=/app/public/
 # resolvers
 ENV APP_RESOLVE=src/app
 ENV ASSETS_RESOLVE=src/assets
@@ -24,4 +24,3 @@ EXPOSE 3000
 CMD [ "yarn", "start" ]
 
 RUN yarn install
-
