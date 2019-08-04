@@ -26,3 +26,24 @@ Check the `docker` vs `docker-compose` [compatibility matrix](https://docs.docke
 ### Access the running app
 The app container will be listening to HTTP requests on port 9000.
 Open a web browser and navigate to `http://localhost:9000`
+
+---
+
+## Running locally
+
+Set your env first. Go to your `.zshrc` or `.bashrc` and append the following variables:
+
+```
+# Devopness variables
+export NODE_ENV=development
+export SRC_PATH=src/app/index.js
+export BUILD_DIR=$HOME/devopness-web-app/public/
+export APP_RESOLVE=src/app
+export ASSETS_RESOLVE=src/assets
+export MODULES_RESOLVE=node_modules
+export APP_HTML=src/assets/index.pug
+export APP_LOGO=src/assets/images/logo.png
+export APP_TITLE="My awesome motherfucker pwa!"
+```bash
+
+Use `source` at your terminal config file or open a new terminal and try to run the app locally =D.
