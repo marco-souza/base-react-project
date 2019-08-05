@@ -1,5 +1,7 @@
 # Devopness
 
+[![pipeline status](https://gitlab.com/devopness/devopness-web-app/badges/devel/pipeline.svg)](https://gitlab.com/devopness/devopness-web-app/commits/devel)
+
 This project is a running react project production-ready.
 
 ## Running the app with docker-compose
