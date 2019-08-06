@@ -2,7 +2,6 @@ image: node
 
 stages:
   - quality_gate
-  - tests
   - build
 
 cache:
@@ -12,7 +11,7 @@ cache:
 before_script:
   - npm install yarn -g
   - yarn
-  - export BUILD_NAME=${CI_COMMIT_TAG:-CI_COMMIT_NAME} 
+  - export BUILD_NAME=${CI_COMMIT_TAG:-CI_COMMIT_NAME}
 
 lint:
   stage: quality_gate
@@ -20,7 +19,7 @@ lint:
     - yarn lint
 
 yarn_tests:
-  stage: tests
+  stage: quality_gate
   script:
     - yarn test
 

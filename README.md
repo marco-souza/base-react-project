@@ -19,7 +19,7 @@ Check the `docker` vs `docker-compose` [compatibility matrix](https://docs.docke
 
 ### How to?
 
-After installing the packages mentioned above in your system you use the following commands: 
+After installing the packages mentioned above in your system you use the following commands:
 
 ```sh
 # Run in development mode
