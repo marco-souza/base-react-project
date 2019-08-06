@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Block from 'app/components/core/Block'
 import Button from 'app/components/core/Button'
@@ -12,7 +13,7 @@ const Header = styled.h2`
   padding-bottom: 80px;
 `
 
-const CallToActionContainer = () => (
+const CallToActionContainer = ({ login }) => (
   <Block>
     <Container>
       <Grid item xs={12}>
@@ -20,12 +21,16 @@ const CallToActionContainer = () => (
           Your new amazing web page starts right here!
         </Typography>
 
-        <Button>
+        <Button onClick={() => login('DOIDOOOO')}>
           Check our feature
         </Button>
       </Grid>
     </Container>
   </Block>
 )
+
+CallToActionContainer.propTypes = {
+  login: PropTypes.func.isRequired,
+}
 
 export default CallToActionContainer
